@@ -66,10 +66,82 @@
             margin-top: 120px; /* 避開固定導覽列 */
         }
 
+        /* --- 最新新聞樣式與動畫 --- */
+        @keyframes breathing {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        .news-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px; 
+            margin-bottom: 80px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+        }
+
+        .news-section a:hover .news-image {
+            opacity: 0.8;
+            transform: scale(1.02);
+            transition: 0.3s;
+        }
+
+        .news-image {
+            width: 300px; 
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .news-text-container {
+            max-width: 400px;
+        }
+
+        .news-title {
+            font-size: 24px;
+            letter-spacing: 8px;
+            font-weight: bold;
+            color: #FFFFFF; /* 已修正：補上分號 */
+            margin-bottom: 15px;
+            animation: breathing 3s ease-in-out infinite; 
+            text-transform: uppercase;
+        }
+
+        .news-content {
+            font-size: 14px;
+            color: #aaa;
+            letter-spacing: 1px;
+            line-height: 1.8;
+        }
+
+        .news-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background-color: transparent; /* 背景透明 */
+            color: #FFFFFF; /* 文字白色 */
+            border: 1px solid rgba(255, 255, 255, 0.5); /* 半透明邊框 */
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .news-btn:hover {
+            background-color: #FFFFFF; /* 背景變白 */
+            color: #222222; /* 文字變深色 */
+            border-color: #FFFFFF;
+        }
+
         /* 網格系統 */
         .grid {
             display: grid;
-            /* 調整 minmax 確保在平板/小筆電上更容易並排 */
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 60px 40px;
         }
@@ -87,10 +159,9 @@
         .work-info h3 { font-size: 18px; margin: 0 0 5px 0; }
         .work-info p { font-size: 13px; color: #aaa; margin: 0; }
 
-        /* 購買按鈕靠右 */
         .buy-button {
-            align-self: flex-end; /* 讓按鈕靠右 */
-            margin-top: -20px; /* 向上微調與文字對齊 */
+            align-self: flex-end; 
+            margin-top: -20px; 
             padding: 8px 20px;
             background-color: #FFE14D;
             border: 1px solid #FFE14D;
@@ -114,6 +185,7 @@
         .about-section { width: 90%; max-width: 800px; margin: 100px 0; text-align: center; }
         .about-section h2 { font-size: 32px; margin-bottom: 30px; }
         .about-section p { line-height: 1.8; color: #E2E2E2; white-space: pre-line; font-size: 13px; }
+        
         .contact-link {
             display: inline-block; margin-top: 30px; padding: 12px 30px;
             border: 1px solid white; text-decoration: none; color: white;
@@ -124,19 +196,32 @@
             background:rgba(0,0,0,0.9); align-items:center; justify-content:center;
         }
 
+        /* 手機版優化區塊 */
         @media (max-width: 600px) { 
             .grid { grid-template-columns: 1fr; } 
             .buy-button { align-self: flex-start; margin-top: 10px; }
 
-            .about-section h2 {
-                font-size: 24px;
-                margin-bottom: 20px;
+            .news-section {
+                flex-direction: column; 
+                text-align: center;
+                gap: 20px;
+                margin-bottom: 50px;
+                padding-bottom: 40px;
             }
 
+            .news-image {
+                width: 100%; 
+                max-width: 350px;
+            }
+
+            .news-title { font-size: 18px; letter-spacing: 5px; }
+            .news-content { font-size: 12px; padding: 0 10px; }
+
+            .about-section h2 { font-size: 24px; margin-bottom: 20px; }
             .about-section p {
-                font-size: 12px;    /* 縮小手機版內文字體 */
-                line-height: 1.6;   /* 稍微縮小行高，讓排版更緊湊 */
-                padding: 0 15px;    /* 增加左右邊距，防止文字貼到螢幕邊緣 */
+                font-size: 12px; 
+                line-height: 1.6;
+                padding: 0 15px;
             }
             .contact-link {
                 font-size: 12px;
@@ -164,6 +249,24 @@
 </nav>
 
 <div class="container" id="works">
+    <div class="news-section">
+        <a href="https://www.threads.com/@cyj___liu/post/DSz11hREquq?xmt=AQF0-UhHzsZcgfTnPnyiIr5OoYocMfIBWqJYjfDgOLFu7w" target="_blank">
+            <img src="images/衣標新聞.jpg" alt="Latest News" class="news-image">
+        </a>
+
+        <div class="news-text-container">
+            <h2 class="news-title">newwwwwwwwss₊⊹‧₊˚ </h2>
+            <p class="news-content">
+                _沒想到大家喜歡看衣標_<br>
+                <a href="https://www.threads.com/@cyj___liu/post/DSz11hREquq?xmt=AQF0-UhHzsZcgfTnPnyiIr5OoYocMfIBWqJYjfDgOLFu7w"
+                   target="_blank"
+                   class="news-btn">
+                                                   ദ്ദി
+                </a>
+            </p>
+        </div>
+    </div>
+
     <div class="grid">
         <div class="work-item" onclick="openLightbox('images/5-bio.jpg')">
             <img src="images/5-bio.jpg">
