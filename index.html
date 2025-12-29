@@ -122,15 +122,16 @@
         .news-btn {
             display: inline-block;
             margin-top: 15px;
-            padding: 8px 20px;
+            padding: 8px 30px;
             background-color: transparent; /* 背景透明 */
             color: #FFFFFF; /* 文字白色 */
-            border: 1px solid rgba(255, 255, 255, 0.5); /* 半透明邊框 */
+            border: 1px solid rgba(255, 255, 255, 0.4); /* 半透明邊框 */
             text-decoration: none;
             font-size: 13px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             border-radius: 4px;
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .news-btn:hover {
@@ -216,6 +217,12 @@
 
             .news-title { font-size: 18px; letter-spacing: 5px; }
             .news-content { font-size: 12px; padding: 0 10px; }
+            .news-btn {
+                width: 100%;        /* 在手機上讓按鈕撐滿寬度，更好點擊 */
+                box-sizing: border-box; /* 確保寬度包含邊框 */
+                font-size: 12px;
+                padding: 12px 0;    /* 手機版高度加高一點點 */
+            }
 
             .about-section h2 { font-size: 24px; margin-bottom: 20px; }
             .about-section p {
