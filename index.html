@@ -218,10 +218,16 @@
             .news-title { font-size: 18px; letter-spacing: 5px; }
             .news-content { font-size: 12px; padding: 0 10px; }
             .news-btn {
-                width: 100%;        /* 在手機上讓按鈕撐滿寬度，更好點擊 */
-                box-sizing: border-box; /* 確保寬度包含邊框 */
-                font-size: 12px;
+                width: auto; 
+                display: inline-block;
+                padding: 8px 30px;
+                margin-top: 15px;
+                font-size: 13px;
                 padding: 12px 0;    /* 手機版高度加高一點點 */
+            }
+
+            .news-text-container {
+                text-align: center; 
             }
 
             .about-section h2 { font-size: 24px; margin-bottom: 20px; }
